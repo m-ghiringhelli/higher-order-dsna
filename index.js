@@ -68,8 +68,21 @@ function addPunctuation(punc) {
     return string + punc;
   };
 }
-const addExcitement = addPunctuation('!!!');
-console.log(addExcitement('Hello World'));
-// Hello World!!!
-console.log(addExcitement('Pokemon, catch em all'));
-// Pokemon, catch em all!!!
+
+// add first
+function addFirst(element) {
+  // return function that takes array
+  return (array) => {
+    // return new array with element as first element
+    // create new array
+    let newArray = [];
+    // append element to new array
+    newArray[0] = element;
+    // append old array to new array
+    newArray = [...newArray, ...array];
+    // return new array
+    return newArray;
+  };
+}
+
+
