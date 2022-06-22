@@ -45,7 +45,7 @@ const returnEvens = (x) => {
   }
 };
 
-// every 
+// every
 
 function every(array, callback) {
   // store a boolean value
@@ -60,3 +60,16 @@ function every(array, callback) {
   }
 }
 
+//add punctuation
+
+function addPunctuation(punc) {
+  //return a function that appends str to another string
+  return (string) => {
+    return string + punc;
+  };
+}
+const addExcitement = addPunctuation('!!!');
+console.log(addExcitement('Hello World'));
+// Hello World!!!
+console.log(addExcitement('Pokemon, catch em all'));
+// Pokemon, catch em all!!!
