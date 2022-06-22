@@ -65,6 +65,28 @@ function every(array, callback) {
   return passes;
 }
 
+// some
+
+function some(array, callback) {
+  let passes = false;
+  // loop through array
+  for (let i = 0; i < array.length; i++) {
+    const item = array[i];
+    //check if callback is true
+    if (callback(item)) {
+      //return true
+      passes = true;
+      return true;
+    } else {
+      //if all callbacks are false return false
+      passes = false;
+    }
+  }
+  return passes;
+}
+console.log(some([1, 6, 5], (n) => n % 2 === 0));
+console.log(some([1, 7, 3], (n) => n % 2 === 0));
+
 //add punctuation
 
 function addPunctuation(punc) {
@@ -89,7 +111,3 @@ function addFirst(element) {
     return newArray;
   };
 }
-
-
-
-
