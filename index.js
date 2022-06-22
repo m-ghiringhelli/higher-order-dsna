@@ -55,9 +55,14 @@ function every(array, callback) {
     // store item in variable
     const item = array[i];
     // if item passes callback test, keep looping
-    if (callback(item)) passes = true;
-    // if item fails, return false
+    if (!callback(item)) {
+      passes = false;
+      return false;
+    } else {
+      passes = true;
+    }
   }
+  return passes;
 }
 
 //add punctuation
@@ -84,5 +89,7 @@ function addFirst(element) {
     return newArray;
   };
 }
+
+
 
 
