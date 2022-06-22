@@ -44,4 +44,19 @@ const returnEvens = (x) => {
     return false;
   }
 };
-console.log(filter(sampleArray, returnEvens));
+
+// every 
+
+function every(array, callback) {
+  // store a boolean value
+  let passes = false;
+  // loop through each item in array
+  for (let i = 0; i < array.length; i++) {
+    // store item in variable
+    const item = array[i];
+    // if item passes callback test, keep looping
+    if (callback(item)) passes = true;
+    // if item fails, return false
+  }
+}
+
