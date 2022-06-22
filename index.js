@@ -127,6 +127,10 @@ function rootDigit(n) {
   const newNumber = rootDigit(sum);
   return newNumber;
 }
-console.log(rootDigit(123));
-console.log(rootDigit(4322));
-console.log(rootDigit(999888777));
+
+// repeat string
+function repeat(txt, n) {
+  if (n === 1) return txt;
+  const newString = txt + repeat(txt, n - 1);
+  return newString;
+}
