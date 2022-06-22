@@ -84,8 +84,6 @@ function some(array, callback) {
   }
   return passes;
 }
-console.log(some([1, 6, 5], (n) => n % 2 === 0));
-console.log(some([1, 7, 3], (n) => n % 2 === 0));
 
 //add punctuation
 
@@ -110,4 +108,11 @@ function addFirst(element) {
     // return new array
     return newArray;
   };
+}
+
+function fib(n) {
+  if (n === 0) return 0;
+  if (n === 1) return 1;
+  const sum = fib(n - 1) + fib(n - 2);
+  return sum;
 }
