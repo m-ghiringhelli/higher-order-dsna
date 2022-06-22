@@ -116,3 +116,17 @@ function fib(n) {
   const sum = fib(n - 1) + fib(n - 2);
   return sum;
 }
+
+// root sum
+
+function rootDigit(n) {
+  const digits = n.toString().split('');
+  const numbers = digits.map((d) => +d);
+  const sum = numbers.reduce((a, b) => a + b);
+  if (digits.length === 1) return digits;
+  const newNumber = rootDigit(sum);
+  return newNumber;
+}
+console.log(rootDigit(123));
+console.log(rootDigit(4322));
+console.log(rootDigit(999888777));
