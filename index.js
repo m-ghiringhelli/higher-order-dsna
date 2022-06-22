@@ -10,7 +10,7 @@ function map(array, callback) {
     // append to newArray
     newArray = [...newArray, modifiedItem];
   }
-  // return new array  
+  // return new array
   return newArray;
 }
 
@@ -19,4 +19,29 @@ const sampleFunction = (x) => {
   return x * 2;
 };
 
-console.log(map(sampleArray, sampleFunction));
+//filter
+
+function filter(array, callback) {
+  // create empty array
+  let newArray = [];
+  // loop through the items in the array
+  for (let i = 0; i < array.length; i++) {
+    // check if item matches callback
+    const item = array[i];
+    if (callback(item)) {
+      //add to empty array
+      newArray = [...newArray, item];
+    }
+  }
+  //return new array
+  return newArray;
+}
+
+const returnEvens = (x) => {
+  if (x % 2 === 0) {
+    return true;
+  } else {
+    return false;
+  }
+};
+console.log(filter(sampleArray, returnEvens));
